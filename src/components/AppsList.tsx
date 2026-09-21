@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useApps } from '@/hooks/useUserData'
 import { cn } from '@/lib/utils'
 import { detectOS, getPlatformPriority, mapOSToPlatform } from '@/lib/osDetector'
-import { Download, DownloadCloud, Monitor, Tv } from 'lucide-react'
+import { Download, Monitor, Tv } from 'lucide-react'
 import {
     Accordion,
     AccordionContent,
@@ -254,19 +254,6 @@ const AppCard = React.memo(function AppCard({ app, desc, dlToShow, fallbackIcon:
                             {dl.name}
                         </a>
                     ))}
-
-                    {/* Import link with primary color */}
-                    {app.import_url && (
-                        <a
-                            href={app.import_url}
-                            className="text-sm px-2 py-1 rounded bg-primary text-primary-foreground hover:opacity-90 inline-flex items-center gap-1 transition-opacity"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <DownloadCloud className="w-3 h-3" />
-                            {t('apps.import')}
-                        </a>
-                    )}
                 </div>
             </div>
         </div>
